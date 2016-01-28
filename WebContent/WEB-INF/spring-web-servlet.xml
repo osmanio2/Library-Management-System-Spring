@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+	
+	<!-- Scan the JavaConfig -->
+	<context:annotation-config/>
+	<context:component-scan base-package="com.library.management.system" />
+
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.context.support.ResourceBundleMessageSource">
+
+		<property name="basenames">
+			<list>
+				<value>messages/messages</value>
+				<value>messages/validation</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Resource mapping -->
+	<mvc:annotation-driven/>
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+</beans>

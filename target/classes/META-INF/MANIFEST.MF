@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: Library Management System
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.library.management.system
+Build-Jdk: 1.7.0_91
+Built-By: osman
+Created-By: Maven Integration for Eclipse
+
